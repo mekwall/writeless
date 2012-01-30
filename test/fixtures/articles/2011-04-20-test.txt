@@ -1,6 +1,0 @@
-title: Test
-author: chris
-slug: test
-date: 2011/04/20
-
-content here

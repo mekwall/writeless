@@ -1,2 +1,2 @@
 var typhoon = require('./lib/typhoon');
-typhoon.app(__dirname, require('./config'));
+module.exports = typhoon.app(__dirname, require('./config'), false);
