@@ -1,6 +1,7 @@
 var fs = require('fs');
 var path = require('path');
 var utils = require('../utils');
+var jade = require('jade');
 
 var Article;
 
@@ -82,6 +83,17 @@ module.exports.Article = (function() {
       article = new Article(data);
       article.meta.date = fileMatch[1].replace(/-/g, '/');
       article.meta.slug = fileMatch[2];
+
+      switch (Article.extension) {
+        case '.jade':
+          article.body = jade.compile(article.body)();
+        break;
+
+        case '.md':
+        case '.markdown':
+        case '.txt':
+          article.body = utils.markdown(article.body);
+      }
 
       callback(null, article);
     });
