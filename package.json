@@ -1,0 +1,14 @@
+{
+  "name": "writeless",
+  "author": "Marcus Ekwall <marcus.ekwall@gmail.com>",
+  "description": "Writeless. Personal blog for Marcus Ekwall",
+  "subdomain": "writeless",
+  "scripts": {
+    "start": "app.js"
+  },
+  "dependencies": {
+    "typhoon": ">= 0.4.1"
+  },
+  "engine": "node >= 0.6.8",
+  "version": "0.0.1-3"
+}

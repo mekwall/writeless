@@ -1,0 +1,28 @@
+.articles
+  - if (action == 'archives')
+    a.back_to_blog(href=configs.baseUrl) &laquo; Back to blog
+    h1
+      = archivesType + ' Archives: '
+      span= archivesLabel
+  - each article in articles
+    article.post
+      header
+        h2
+          a(href=article.permalink())= article.title
+        span
+          = 'Posted '
+          time(datetime=isoDate(article.date), pubdate='pubdate')
+            a(href=article.permalink())= prettyDate(article.date)
+          - if (article.meta.author)
+            = ' by '
+            = article.meta.author
+      .content
+        != summary(article.body)
+      footer
+        span.more-link
+          a(href=article.permalink()) Read More...
+nav.paging
+  - if (paging.previous)
+    a.previous(href=paging.previous) &laquo; Newer entries
+  - if (paging.next)
+    a.next(href=paging.next) Older entries &raquo;

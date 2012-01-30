@@ -1,0 +1,70 @@
+@import url(http://fonts.googleapis.com/css?family=Chewy);
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans);
+
+body,
+p {
+	font-family: "Droid Sans", sans-serif;
+}
+
+h1,
+h2, 
+.navbar .brand {
+	font-family: Chewy, Arial, sans-serif;
+	font-weight: normal;
+}
+
+.navbar .brand {
+	text-shadow: 0px 0px 1px #fff;
+	font-size: 24px;
+	line-height: 1em;
+}
+
+.navbar .brand:hover {
+	text-shadow: 0px 0px 8px #fff;
+}
+
+.navbar .brand small {
+	font-size: 14px;
+	font-weight: normal;
+	color: #777;
+	text-shadow: none !important;
+	margin-left: .5em;
+}
+
+a {
+	-webkit-transition: .2s all;
+	-moz-transition: .2s all;
+	transition: .2s all;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+
+h1,
+h2,
+h3 {
+	line-height: 1.6em;
+}
+
+@media (min-width: 940px) {
+	body {
+		padding-top: 60px;
+		padding-bottom: 40px;
+	}
+}
+
+body > .container > footer {
+	color: #ccc;
+	margin-top: 20px;
+	font-size: 9px;
+}
+
+article > header {
+	margin-bottom: 1em;
+}
+
+article > header > span {
+	color: #999;
+}

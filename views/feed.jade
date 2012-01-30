@@ -1,0 +1,16 @@
+!!! xml
+rss(version: '2.0')
+  channel
+    title= configs.title || ''
+    description= configs.description || ''
+    link= configs.baseUrl
+    lastBuildDate= rfc822Date(lastBuild)
+    generator typhoon
+    ttl 60
+    - each article in articles
+      item
+        title= article.title
+        description= markdown(article.body)
+        pubDate= rfc822Date(article.date)
+        guid= article.permalink()
+        link= article.permalink()
