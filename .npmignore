@@ -1,2 +1,9 @@
+<<<<<<< HEAD
 .gitignore
 .bin
+=======
+docs
+*.md
+Cakefile
+test
+>>>>>>> 3521d9bb79625cc8b02427fa597732b875854d48

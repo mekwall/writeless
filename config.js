@@ -6,8 +6,8 @@ module.exports = {
   'staticDir': __dirname + '/public',           // path to the blog's assets folder
   'viewsDir': __dirname + '/views',             // path to the views
   'articlesDir': __dirname + '/articles',       // path to the articles
-  'host': '',                                   // host to listen on
-  'port': 3000,                                 // port to listen on
+  'host': 'writeless.se',                                   // host to listen on
+  'port': 3001,                                 // port to listen on
   'baseUrl': '',                                // base url
   'encoding': 'utf8',                           // encoding of the articles
   'perPage': 5,                                 // articles per page

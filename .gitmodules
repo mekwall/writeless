@@ -1,3 +1,6 @@
 [submodule "lib/typhoon"]
 	path = lib/typhoon
 	url = git://github.com/mekwall/typhoon.git
+[submodule "public/bootstrap"]
+	path = public/bootstrap
+	url = https://github.com/twitter/bootstrap.git
