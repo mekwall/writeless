@@ -1,22 +1,28 @@
-var cluster = require('cluster'),
-    app = require('./app'),
-    cores = require('os').cpus().length,
-    env = process.env.NODE_ENV || "development";
-
+var app = require('./app')
 var port = process.env.PORT || 3001;
 
-if (cluster.isMaster) {
-    // fork workers
-    for (var i = 0; i < cores; i++) {
-        cluster.fork();
+try {
+    var cluster = require('cluster');
+        cores = require('os').cpus().length,
+        env = process.env.NODE_ENV || "development";
+
+    if (cluster.isMaster) {
+        console.log("Initializing cluster on port: "+port);
+        // fork workers
+        console.log("Forking "+cores+" workers...")
+        for (var i = 0; i < cores; i++) {
+            cluster.fork();
+        }
+        cluster.on('death', function(worker){
+            console.log('Worker ' + worker.pid + ' died.');
+            console.log('Forking new worker.');
+            cluster.fork();
+        });
+    } else {
+        app.listen(port, function(){
+            console.log('Worker ready.');
+        });
     }
-
-    cluster.on('death', function(worker){
-        console.log('worker ' + worker.pid + ' died');
-    });
-
-} else {
-    app.listen(port, function(){
-        console.log('listening to: '+port);
-    });
+} catch(e) {
+    app.listen(port);
 }
